@@ -1,0 +1,171 @@
+<style lang="less">
+page {
+  background-color: #f2f2f2;
+}
+.page-index {
+  position: relative;
+  width: 100%;
+  .swiper {
+    width: 100%;
+    height: 300rpx;
+    background-color: #000;
+    .swiper-img {
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+    }
+  }
+  .section-work {
+    background-color: #fff;
+    width: 100%;
+    padding: 40rpx;
+    box-sizing: border-box;
+    .work-item {
+      height: 140rpx;
+      width: 80rpx;
+      flex-direction: column;
+      text-align: center;
+      .work-img {
+        width: 80rpx;
+        height: 80rpx;
+      }
+      text {
+        font-size: 24rpx;
+        color: gray
+      }
+    }
+  }
+  .list {
+    &-title {
+      align-items: center;
+      margin-bottom: 34rpx;
+      margin-top: 48rpx;
+      font-size: 34rpx;
+    }
+    &-link {
+      font-size: 26rpx;
+      color: gray;
+    }
+  }
+  .cu-btn {
+    margin: 30rpx 0rpx;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 40rpx 58rpx;
+    background-color: #fff;
+  }
+}
+</style>
+<template>
+  <div class="page-index container">
+    <div class="swiper">
+      <swiper 
+        :indicator-dots="indicatorDots"
+        :autoplay="autoplay" 
+        :interval="interval" 
+        :duration="duration"
+        indicator-color="#cdcdd5"
+        indicator-active-color="#fff"
+        >
+        <block v-for="swiperLists" v-key="*this">
+          <swiper-item>
+            <img :src="item" class="swiper-img">
+          </swiper-item>
+        </block>
+      </swiper>
+    </div>
+    <div class="section section-work">
+      <div class="work flex justify-between">
+        <div class="work-item flex justify-between" v-for="workLists" v-key="*this">
+          <image :src="item.icon" class="work-img"></image>
+          <text>{{ item.title }}</text>
+        </div>
+      </div>
+    </div>
+    <div class="section-ad">
+    </div>
+    <div class="list com-margin">
+      <div class="list-title flex justify-between">
+        <h2 class="list-word">查看生源</h2>
+        <div class="list-link">更多<text class="cuIcon-right lg text-gray"></text></div>
+      </div>
+      <CourseCard v-for="courseLists" v-key="*this" :courseInfo="courseLists[index]"></CourseCard>
+    </div>
+    <button class="cu-btn round lines-blue" role="button" aria-disabled="false">查看更多生源</button>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core';
+  // import eventHub from '../common/eventHub';
+  // import { mapState } from '@wepy/x';
+  // import store from '../store';
+  // import testMixin from '../mixins/test'
+
+  wepy.page({
+    // store,
+    config: {
+      navigationBarTitleText: 'test'
+    },
+
+    // hooks: {
+    //   // Page 级别 hook, 只对当前 Page 的 setData 生效。
+    //   'before-setData': function (dirty) {
+    //     if (Math.random() < 0.2) {
+    //       console.log('setData canceled');
+    //       return false; // Cancel setData
+    //     }
+    //     dirty.time = +new Date();
+    //     return dirty;
+    //   }
+    // },
+
+ 
+
+    // mixins: [testMixin],
+
+    data: {
+      swiperLists: ['../images/swiper01.jpg', '../images/swiper02.jpg'],
+      indicatorDots: true,
+      vertical: false,
+      autoplay: true,
+      interval: 2000,
+      duration: 500,
+      workLists: [
+        { title: '生源', icon: '../images/work1.png' },
+        { title: '排课', icon: '../images/work1.png' },
+        { title: '评级', icon: '../images/work1.png' },
+        { title: '赚现金', icon: '../images/work1.png' },
+        { title: '课件', icon: '../images/work1.png' },
+      ],
+      courseLists: [
+        { name:  '初三数学', price: '565', time: '面议', address: '湖南省岳阳市平江县长寿镇', date: '剩余03天2时06分' },
+        { name:  '初三数学', price: '565', time: '面议', address: '湖南省岳阳市平江县长寿镇', date: '剩余03天2时06分' },
+        { name:  '初三数学', price: '565', time: '面议', address: '湖南省岳阳市平江县长寿镇', date: '剩余03天2时06分' },
+        { name:  '初三数学', price: '565', time: '面议', address: '湖南省岳阳市平江县长寿镇', date: '剩余03天2时06分' },
+        { name:  '初三数学', price: '565', time: '面议', address: '湖南省岳阳市平江县长寿镇', date: '剩余03天2时06分' },
+        { name:  '初三数学', price: '565', time: '面议', address: '湖南省岳阳市平江县长寿镇', date: '剩余03天2时06分' },
+      ]
+    },
+
+    computed: {
+    },
+
+    methods: {
+    },
+
+    created () {
+    }
+  });
+</script>
+<config>
+{
+    navigationBarTitleText: '选师无忧',
+    navigationBarBackgroundColor: '#2294f1',
+    navigationBarTextStyle: 'white',
+    usingComponents: {
+      CourseCard: '../components/CourseCard',
+    }
+}
+</config>

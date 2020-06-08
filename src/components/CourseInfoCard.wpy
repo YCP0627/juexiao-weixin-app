@@ -1,0 +1,68 @@
+<style lang="less">
+@import "../colorui/main.wxss";
+@import "../colorui/icon.wxss";
+.course-card {
+  margin-top: 30rpx;
+  padding: 28rpx 24rpx;
+  border-radius: 2rpx;
+  overflow: hidden;
+  background-color: white;
+    .card-header {
+      font-size: 30rpx;
+      padding-bottom: 8rpx;
+    }
+    .card-con {
+        font-size: 28rpx;
+        .con-item {
+          padding-top: 20rpx;
+          .cu-tag {
+            height: 36rpx;
+            background-color: #d4e0ec;
+          }
+        }
+        .line {
+          width: 200%;
+          border-bottom: 4rpx solid #dad8d6 ;
+          padding-top: 20rpx;
+          margin-left: -30rpx;
+        }
+        .detail {
+          color: gray;
+          &--small {
+            font-size: 26rpx;
+          }
+        }
+    }
+}
+</style>
+<template>
+    <div class="course-card">
+        <div class="card-header flex justify-between align-center">
+            <h2 class="card-name">未接</h2>
+            <text class="card-price">五日欧威</text>
+        </div>
+        <div class="card-con">
+            <div class="con-item flex justify-between align-center">
+                <div class="item-text text-cut">时间：<text class="detail">周六上午</text></div>
+                <div class="cu-tag radius">时间可协商</div>
+            </div>
+            <div class="con-item flex justify-between">
+                <div class="item-text text-cut">地点：<text class="detail">周六上午</text></div>
+                <div class="cu-tag radius">线下</div>
+            </div>
+            <div class="line"></div>
+            <div class="con-item">学生：<text class="detail detail--small">周六上午</text></div>
+            <div class="con-item">要求：<text class="detail detail--small">周六上午</text></div>
+        </div>
+    </div>
+</template>
+
+<script>
+  import wepy from "@wepy/core";
+
+  wepy.component({
+    props: {
+    courseInfo: {}
+    }
+  })
+</script>

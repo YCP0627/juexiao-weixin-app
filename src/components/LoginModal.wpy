@@ -1,0 +1,51 @@
+<style lang="less">
+@import "../colorui/main.wxss";
+@import "../colorui/icon.wxss";
+</style>
+<template>
+  <view class="cu-modal {{modalName=='loginModal'?'show':''}}">
+    <view class="cu-dialog" style="width:70%">
+      <view class="cu-bar bg-blue justify-end text-white">
+        <view class="content">您还未登录</view>
+      </view>
+      <view class="padding-xl">
+        为选师无忧合作老师提供生源、课程管理、教学资料等数字服务
+      </view>
+      <view class="cu-bar bg-white">
+        <view class="action margin-0 flex-sub solid-left" bindtap="hideLoginModal">暂不登录</view>
+        <view class="action margin-0 flex-sub text-blue solid-left" bindtap="goLogin">立即登录</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from "@wepy/core";
+
+  wepy.component({
+    props: {
+      modalName: {
+        type: String,
+        default: '',
+        // twoWay: true
+      }
+    },
+    computed: {
+      // showModal() {
+      //   return this.modalName == 'loginModal'
+      // }
+    },
+    // data: {
+    //   showModal: this.modalName
+    // },
+    methods: {
+      hideLoginModal() {
+        this.modalName = '';
+      },
+      goLogin() {
+        let url = `login`;
+        wx.navigateTo({url})
+      }
+    },
+  })
+</script>

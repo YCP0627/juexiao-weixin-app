@@ -1,0 +1,147 @@
+<style lang="less">
+page {
+  background-color: #f1f2f6;
+}
+.page-students {
+  .header {
+    padding: 20rpx 30rpx 0 30rpx;
+  .nav {
+    display: flex;
+    border: 1px solid #2294f1;
+    border-radius: 10rpx;
+    .nav-item {
+      padding: 24rpx 0;
+      flex: 1;
+      border-right: 1px solid #2294f1;
+      &:last-child {
+        border-right: 0;
+      }
+    }
+    .cur-tab {
+      background-color: #2294f1;
+      color: #fff;
+    }
+  }
+  }
+  .content-card {
+    margin: 0 30rpx;
+  }
+  .content-title {
+    position: relative;
+    padding: 30rpx;
+  }
+  .parent {
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 30rpx;
+      bottom: 0;
+      margin: auto;
+      width: 30rpx;
+      height: 30rpx;
+      color: var(--grey);
+      content: "\e6a3";
+      text-align: center;
+      font-size: 34rpx;
+      font-family: "cuIcon";
+      line-height: 30rpx;
+    }
+  }
+  .demand {
+    border-bottom: 2rpx solid #e4d9d9;
+    text-align: center;
+    .demand-item:not(:last-child) {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: '';
+        border-left: 2rpx solid #dad8d6;
+        height: 100%;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+</style>
+<template>
+  <div class="container page-students">
+    <div class="header bg-white">
+      <view class="bg-white nav text-center">
+        <view class="nav-item {{index==TabCur?'cur-tab':''}}" wx:for="{{tabList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+          {{ item }}
+        </view>
+      </view>
+    </div>
+    <div class="content" v-if="TabCur == 0">
+      <div class="content-title parent bg-white">
+        <navigator class="content" url="/pages/about/log/log" hover-class="none">
+          <text>我的报名</text>
+        </navigator>
+      </div>
+      <div class="content-card"><CourseIngoCard></CourseIngoCard></div>
+    </div>
+    <div class="content" v-if="TabCur == 1">
+      <div class="content-title business"></div>
+      <div class="content-card"><CourseIngoCard></CourseIngoCard></div>
+    </div>
+    <div class="content" v-if="TabCur == 2">
+      <div class="content-title demand grid col-3 bg-white">
+        <div v-for="demandTabList" class="demand-item">{{item}}<text class="cuIcon-unfold lg text-gray"></text></div>
+      </div>
+      <div class="content-card"><CourseIngoCard></CourseIngoCard></div>
+    </div>
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core'
+  // import eventHub from '../common/eventHub';
+  // import { mapState } from '@wepy/x';
+  // import store from '../store';
+  // import testMixin from '../mixins/test'
+
+  wepy.page({
+    // store,
+    config: {
+      navigationBarTitleText: '生源'
+    },
+
+    hooks: {
+    },
+
+ 
+
+    // mixins: [testMixin],
+
+    data: {
+      tabList: ['家长直通车', '业务推单', '需求广场'],
+      TabCur: 1,
+      scrollLeft:0,
+      demandTabList:['不限', '科目', '专职']
+    },
+
+    computed: {
+    },
+
+    methods: {
+      tabSelect(e) {
+        this.TabCur = e.currentTarget.dataset.id;
+        this.scrollLeft = (e.currentTarget.dataset.id-1)*60
+      }
+    },
+
+    created () {
+    }
+  });
+</script>
+<config>
+{
+    navigationBarTitleText: '生源',
+    navigationBarBackgroundColor: '#2294f1',
+    navigationBarTextStyle: 'white',
+    usingComponents: {
+      CourseIngoCard: '../components/CourseInfoCard',
+    }
+}
+</config>

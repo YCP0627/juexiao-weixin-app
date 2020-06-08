@@ -1,0 +1,80 @@
+<style lang="less">
+@import "../colorui/main.wxss";
+@import "../colorui/icon.wxss";
+.course-card {
+  padding: 28rpx;
+  margin-top: 28rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+  overflow: hidden;
+  .card-header, .card-con {
+    align-items: center;
+  }
+  .card-header {
+    padding-bottom: 28rpx;
+    position: relative;
+    &::before {
+      content: "";
+      width: 200%;
+      position: absolute;
+      bottom: 0;
+      left: -10%;
+      right: 0;
+      border-top: 4rpx solid #dad8d6 ;
+    }
+  }
+  .card-name {
+    font-size: 34rpx;
+  }
+  .card-price {
+    font-size: 28rpx;
+    color: #b3aeae;
+  }
+  .card-con {
+    padding-top: 28rpx;
+    .con-title {
+      font-size: 26rpx;
+      color: #b3aeae;
+    }
+    .con-detail {
+      font-size: 28rpx;
+    }
+  }
+}
+</style>
+<template>
+    <div class="course-card" @click="goCourseInfo(1)">
+        <div class="card-header flex justify-between">
+            <h2 class="card-name">{{ courseInfo.name }}</h2>
+            <text class="card-price">{{ courseInfo.price }}</text>
+        </div>
+        <div class="card-con card-con--time flex justify-between">
+            <text class="con-title">上课时间</text>
+            <text class="con-detail">{{ courseInfo.time }}</text>
+        </div>
+        <div class="card-con card-con--address flex justify-between">
+            <text class="con-title">上课地点</text>
+            <text class="con-detail">{{ courseInfo.address }}</text>
+        </div>
+        <div class="card-con card-con--date flex justify-between">
+            <text class="con-title">报名截止</text>
+            <text class="con-detail">{{ courseInfo.date }}</text>
+        </div>
+    </div>
+</template>
+
+<script>
+  import wepy from "@wepy/core";
+
+  wepy.component({
+    props: {
+    courseInfo: {}
+    },
+    methods: {
+      goCourseInfo(id) {
+        let url = `course-info?cid=${id}`;
+        wx.navigateTo({url})
+      }
+    },
+  })
+</script> 
