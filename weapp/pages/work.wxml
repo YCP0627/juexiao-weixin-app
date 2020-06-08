@@ -1,0 +1,6 @@
+
+<view class="container page-work">
+  <view class="date-con">
+    <calendar bind_init="__initComponent" calendarConfig="{{calendarConfig}}"></calendar>
+  </view>
+</view>

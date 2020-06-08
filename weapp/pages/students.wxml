@@ -1,0 +1,28 @@
+
+<view class="container page-students">
+  <view class="header bg-white">
+    <view class="bg-white nav text-center">
+      <view wx:for="{{tabList}}" wx:key data-id="{{index}}" data-wpy-evt="7-0" bind:tap="__dispatcher" class="nav-item {{index==TabCur?'cur-tab':''}}">
+        {{ item }}
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{ TabCur == 0 }}" class="content">
+    <view class="content-title parent bg-white">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text>我的报名</text>
+      </navigator>
+    </view>
+    <view class="content-card"><CourseIngoCard bind_init="__initComponent"></CourseIngoCard></view>
+  </view>
+  <view wx:if="{{ TabCur == 1 }}" class="content">
+    <view class="content-title business"></view>
+    <view class="content-card"><CourseIngoCard bind_init="__initComponent"></CourseIngoCard></view>
+  </view>
+  <view wx:if="{{ TabCur == 2 }}" class="content">
+    <view class="content-title demand grid col-3 bg-white">
+      <view wx:for="{{ demandTabList }}" wx:for-index="index" wx:for-item="item" wx:key="index" class="demand-item">{{item}}<text class="cuIcon-unfold lg text-gray"></text></view>
+    </view>
+    <view class="content-card"><CourseIngoCard bind_init="__initComponent"></CourseIngoCard></view>
+  </view>
+</view>

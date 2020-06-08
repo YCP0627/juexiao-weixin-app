@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "选师无忧",
+    "navigationBarBackgroundColor": "#2294f1",
+    "navigationBarTextStyle": "white",
+    "component": true,
+    "usingComponents": {
+        "CourseCard": "./../components/CourseCard"
+    }
+}

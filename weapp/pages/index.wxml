@@ -1,0 +1,30 @@
+
+<view class="page-index container">
+  <view class="swiper">
+    <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}" indicator-color="#cdcdd5" indicator-active-color="#fff">
+      <block wx:for="{{ swiperLists }}" wx:for-index="index" wx:for-item="item" wx:key="index" v-key="*this">
+        <swiper-item>
+          <image src="{{ item }}" class="swiper-img">
+        </image></swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="section section-work">
+    <view class="work flex justify-between">
+      <view wx:for="{{ workLists }}" wx:for-index="index" wx:for-item="item" wx:key="index" v-key="*this" class="work-item flex justify-between">
+        <image src="{{ item.icon }}" class="work-img"></image>
+        <text>{{ item.title }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="section-ad">
+  </view>
+  <view class="list com-margin">
+    <view class="list-title flex justify-between">
+      <view class="list-word">查看生源</view>
+      <view class="list-link">更多<text class="cuIcon-right lg text-gray"></text></view>
+    </view>
+    <CourseCard bind_init="__initComponent" wx:for="{{ courseLists }}" wx:for-index="index" wx:for-item="item" wx:key="index" v-key="*this" courseInfo="{{ courseLists[index] }}"></CourseCard>
+  </view>
+  <button role="button" aria-disabled="false" class="cu-btn round lines-blue">查看更多生源</button>
+</view>

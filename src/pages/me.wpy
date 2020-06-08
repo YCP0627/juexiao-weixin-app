@@ -157,7 +157,7 @@ page {
         </navigator>
       </view>
     </view>
-    <LoginModal :modalName="modalName"></LoginModal>
+    <LoginModal :modalName.sync="modalName"></LoginModal>
   </div>
 </template>
 

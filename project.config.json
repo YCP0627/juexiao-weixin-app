@@ -25,5 +25,6 @@
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionRoot": "cloudfunctions/",
 	"libVersion": "2.11.0",
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {}
 }

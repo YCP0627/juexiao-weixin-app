@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "个人中心",
+    "navigationBarBackgroundColor": "#2294f1",
+    "navigationBarTextStyle": "white",
+    "component": true,
+    "usingComponents": {
+        "LoginModal": "./../components/LoginModal"
+    }
+}

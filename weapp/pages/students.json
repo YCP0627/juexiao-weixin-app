@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "生源",
+    "navigationBarBackgroundColor": "#2294f1",
+    "navigationBarTextStyle": "white",
+    "component": true,
+    "usingComponents": {
+        "CourseIngoCard": "./../components/CourseInfoCard"
+    }
+}

@@ -1,0 +1,20 @@
+
+<view class="course-card">
+    <view class="card-header flex justify-between align-center">
+        <view class="card-name">未接</view>
+        <text class="card-price">五日欧威</text>
+    </view>
+    <view class="card-con">
+        <view class="con-item flex justify-between align-center">
+            <view class="item-text text-cut">时间：<text class="detail">周六上午</text></view>
+            <view class="cu-tag radius">时间可协商</view>
+        </view>
+        <view class="con-item flex justify-between">
+            <view class="item-text text-cut">地点：<text class="detail">周六上午</text></view>
+            <view class="cu-tag radius">线下</view>
+        </view>
+        <view class="line"></view>
+        <view class="con-item">学生：<text class="detail detail--small">周六上午</text></view>
+        <view class="con-item">要求：<text class="detail detail--small">周六上午</text></view>
+    </view>
+</view>

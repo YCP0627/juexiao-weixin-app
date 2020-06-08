@@ -27,7 +27,7 @@
       modalName: {
         type: String,
         default: '',
-        // twoWay: true
+        twoWay: true
       }
     },
     computed: {
@@ -35,9 +35,9 @@
       //   return this.modalName == 'loginModal'
       // }
     },
-    // data: {
-    //   showModal: this.modalName
-    // },
+    data: {
+      showModal: this.modalName
+    },
     methods: {
       hideLoginModal() {
         this.modalName = '';
@@ -47,5 +47,11 @@
         wx.navigateTo({url})
       }
     },
+    lifetimes: {
+      created() {
+        console.log(this.showModal);
+        console.log('我不知道呀');
+      }
+    }
   })
 </script>

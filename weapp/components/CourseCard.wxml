@@ -1,0 +1,19 @@
+
+<view data-wpy-evt="15-0" bind:tap="__dispatcher" class="course-card">
+    <view class="card-header flex justify-between">
+        <view class="card-name">{{ courseInfo.name }}</view>
+        <text class="card-price">{{ courseInfo.price }}</text>
+    </view>
+    <view class="card-con card-con--time flex justify-between">
+        <text class="con-title">上课时间</text>
+        <text class="con-detail">{{ courseInfo.time }}</text>
+    </view>
+    <view class="card-con card-con--address flex justify-between">
+        <text class="con-title">上课地点</text>
+        <text class="con-detail">{{ courseInfo.address }}</text>
+    </view>
+    <view class="card-con card-con--date flex justify-between">
+        <text class="con-title">报名截止</text>
+        <text class="con-detail">{{ courseInfo.date }}</text>
+    </view>
+</view>

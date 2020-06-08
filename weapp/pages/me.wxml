@@ -1,0 +1,103 @@
+
+<view class="container page-me">
+  <view wx:if="{{ !this.$parent.globalData.isLogin }}" data-wpy-evt="9-0" bind:tap="__dispatcher" class="me-header flex align-center com-margin">
+    <view style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);" class="cu-avatar lg round margin-left"></view>
+    <view class="me-word login">登录/注册</view>
+  </view>
+  <view wx:else class="me-header flex align-center com-margin">
+    <view style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);" class="cu-avatar lg round margin-left"></view>
+    <view class="me-word">
+      <view class="name">
+        <text class="name-title">昵称</text>
+        <text class="name-detail">152****7107</text>
+      </view>
+      <view class="level">
+        <text>课酬评级：0级</text>
+      </view>
+    </view>
+  </view>
+  <view class="me-section flex">
+    <view class="section-item">
+      <view class="num">0</view>
+      <view class="intro">待备课</view>
+    </view>
+    <view class="section-item">
+      <view class="num">0</view>
+      <view class="intro">待点评</view>
+    </view>
+    <view class="section-item">
+      <view class="num">0</view>
+      <view class="intro">待确认上课</view>
+    </view>
+  </view>
+  <view class="me-swiper com-margin"></view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>个人资料</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>认证中心</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator url="/pages/students" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>我的钱包</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>我的违约</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>我的订单</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>我的评价</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>教学资料</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>反馈与投诉</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>关注公众号</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <navigator url="/pages/about/log/log" hover-class="none" class="content">
+        <text class="cuIcon-formfill text-green"></text>
+        <text>设置</text>
+      </navigator>
+    </view>
+  </view>
+  <LoginModal bind_init="__initComponent" modalName="{{ modalName }}"></LoginModal>
+</view>

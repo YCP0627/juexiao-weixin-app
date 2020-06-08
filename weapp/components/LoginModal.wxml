@@ -1,0 +1,15 @@
+
+<view class="cu-modal {{modalName=='loginModal'?'show':''}}">
+  <view style="width:70%;" class="cu-dialog">
+    <view class="cu-bar bg-blue justify-end text-white">
+      <view class="content">您还未登录</view>
+    </view>
+    <view class="padding-xl">
+      为选师无忧合作老师提供生源、课程管理、教学资料等数字服务
+    </view>
+    <view class="cu-bar bg-white">
+      <view data-wpy-evt="17-0" bind:tap="__dispatcher" class="action margin-0 flex-sub solid-left">暂不登录</view>
+      <view data-wpy-evt="17-1" bind:tap="__dispatcher" class="action margin-0 flex-sub text-blue solid-left">立即登录</view>
+    </view>
+  </view>
+</view>

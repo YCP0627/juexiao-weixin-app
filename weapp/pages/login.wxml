@@ -1,0 +1,9 @@
+
+<view class="page-login flex flex-direction align-center">
+  
+  <view class="name">选师无忧老师版</view>
+  <view class="text-center">
+    <button data-wpy-evt="11-0" bind:tap="__dispatcher" class="bg-green cu-btn">微信一键登录</button>
+  </view>
+  <view class="remarks">点击登录即表示已阅读并同意<label>选师无忧服务协议</label>与<label>隐私政策</label></view>
+</view>
